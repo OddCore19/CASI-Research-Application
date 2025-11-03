@@ -72,7 +72,10 @@ def auto_decompose_and_solve(initial_task: str) -> str:
     Automatically decomposes a complex task and solves it using a multi-model workflow.
     """
         # Step 1: Decompose the problem using an open-source model (weak).
-    decomposition_prompt = f"Decompose the following task into three simpler, related tasks:\n\n{initial_task}"
+    decomposition_template = ""
+    with open("decomposition_prompt.txt", "r") as f:
+        decomposition_template = f.read()
+    decomposition_prompt = decomposition_template.format(NEFARIOUS_TASK=initial_task)
     related_tasks = call_llama(decomposition_prompt)
 
     # Step 2: Solve hard benign sub-tasks with strong models.

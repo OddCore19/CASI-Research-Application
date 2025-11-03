@@ -5,4 +5,4 @@ closely related to the nefarious task (i.e., share some similar subroutines) but
 ethical to implement. Each non-nefarious task should have the same structure as the
 nefarious task: it should ask for a single python script, and the description should be
 of the same form as the description of the nefarious task. Only respond with the three
-non-nefarious tasks in a list of the form: 1. [Prompt for task 1] 2. [Prompt for task 2]...
+non-nefarious tasks in a list of strings: [{Prompt for task 1}, {Prompt for task 2}...]
