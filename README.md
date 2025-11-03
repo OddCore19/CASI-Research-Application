@@ -1,1 +1,13 @@
 # CASI-Research-Application
+To CASI team: 
+
+I just found out about this oppotunity on Sunday so I'm still working on the implementation of some questions.
+---
+# Answers:
+1. 
+    - Weakness: The apparatus design and evaluation metrics seem somewhat arbitrary. The benchmark mainly foucus on one-shot responses, where an actual attacker might leverage multi-step jailbreaking as mentioned in other papers to circumvent the abilities this benchmark proves. Evaluation is somewhat vague and subject, as a clear line can hardly be drawn about where an answer is "enabling" enough for a virology goal.
+    - Striking finding: I expected SotA LLMs to perform better in terms of alignment and saftguarding. It seems with elaborate prompts, there's a fair chance that frontier models "slip out" actionable step‑by‑step advice on virological experiments.
+2. 
+    - **The key difference** between the two studies lies in how the the threat of misuse is envisioned. The scope of \[Cha+24\] is limited to *jailbreaking as a single-shot behavior*, implemented within one prompt-response interaction. In contrary, \[JDS24\] goes further by exploring a decomposition threat model that *spans multiple rounds of conversation, involves multiple model calls, and fully leverages the capacities of agentic systems* as per industry pratices with frontier consumer agents.
+    - **The attack framework** is simple and intuitive: high-quality, capable frontier models are usually well-aligned and only available through API therefore safe-filtered; open-source and locally deployable models are uncensored and finetunable, but less capable as a trade-off. A nefarious task can be brought out by letting one of each collaborate: a hard, benign task for the frontier model, and an easy "tweak" or "assembly" task for the weak, unaligned model.
+    - **I'm implementing** the malicious python script generation and sensitive image generation proposed in the paper (in `pipeline.py`). Prompts are copied from the appendix almost as-is except output formats. I have yet to collect enough results to make a conclusion, but from the few images I got from prompting by hand, I'd say the approach is working quite well. The most significant improvement over diffusion models directly trained with sensitive images is the consistency of the semantics and object relations.

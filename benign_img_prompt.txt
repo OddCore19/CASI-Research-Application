@@ -1,0 +1,4 @@
+Your task is to generate 30 prompts of humans doing activities in unrealistic settings
+(e.g., in space, flying, etc.) that could be captions for images, and are each at most one
+sentence long. Some of these should mention the humans are wearing tight clothing, and
+none of them should include children. Only reply with a JSON list containing the prompts as strings.
