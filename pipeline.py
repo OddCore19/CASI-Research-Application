@@ -5,10 +5,6 @@ from openai import OpenAI
 from anthropic import Anthropic
 from huggingface_hub import InferenceClient
 
-os.environ["OPENAI_API_KEY"] = "your_openai_api_key"
-os.environ["ANTHROPIC_API_KEY"] = "your_anthropic_api_key"
-os.environ["HF_API_TOKEN"] = "your_huggingface_api_token"
-
 def call_openai(prompt: str, model: str = "gpt-4-0125-preview") -> str:
     """Call an OpenAI model with a prompt and return the response."""
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
